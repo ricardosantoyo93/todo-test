@@ -1,25 +1,57 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import 'materialize-css';
+import { Container, Col, Row, Card } from 'react-materialize';
+
+import './App.scss';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container className="main">
+      <Row>
+        <Col>
+          <h3>To Do</h3>
+          <Card
+            actions={[
+              <a key="1" href="#">This is a link</a>,
+              <a key="2" href="#">This is a link</a>
+            ]}
+            className="blue-grey darken-1"
+            textClassName="white-text"
+            title="To Do"
+          >
+            I am a very simple card.
+          </Card>
+        </Col>
+        <Col>
+          <h3>In Progress</h3>
+          <Card
+            actions={[
+              <a key="1" href="#">This is a link</a>,
+              <a key="2" href="#">This is a link</a>
+            ]}
+            className="blue-grey darken-1"
+            textClassName="white-text"
+            title="In Progress"
+          >
+            I am a very simple card.
+          </Card>
+        </Col>
+        <Col>
+          <h3>Done</h3>
+          <Card
+            actions={[
+              <a key="1" href="#">This is a link</a>,
+              <a key="2" href="#">This is a link</a>
+            ]}
+            className="blue-grey darken-1"
+            textClassName="white-text"
+            title="Done"
+          >
+            I am a very simple card.
+          </Card>
+        </Col>
+      </Row>
+    </Container>
   );
 }
 

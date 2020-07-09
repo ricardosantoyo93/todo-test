@@ -1,6 +1,8 @@
 import React from 'react';
 import 'materialize-css';
-import { Container, Col, Row, Card } from 'react-materialize';
+import { Container, Col, Row } from 'react-materialize';
+
+import Render from './components/render';
 
 import './App.scss';
 
@@ -10,45 +12,15 @@ function App() {
       <Row>
         <Col>
           <h3>To Do</h3>
-          <Card
-            actions={[
-              <a key="1" href="#">This is a link</a>,
-              <a key="2" href="#">This is a link</a>
-            ]}
-            className="blue-grey darken-1"
-            textClassName="white-text"
-            title="To Do"
-          >
-            I am a very simple card.
-          </Card>
+          <Render source="todo" />
         </Col>
         <Col>
           <h3>In Progress</h3>
-          <Card
-            actions={[
-              <a key="1" href="#">This is a link</a>,
-              <a key="2" href="#">This is a link</a>
-            ]}
-            className="blue-grey darken-1"
-            textClassName="white-text"
-            title="In Progress"
-          >
-            I am a very simple card.
-          </Card>
+          <Render source="inprogress" />
         </Col>
         <Col>
           <h3>Done</h3>
-          <Card
-            actions={[
-              <a key="1" href="#">This is a link</a>,
-              <a key="2" href="#">This is a link</a>
-            ]}
-            className="blue-grey darken-1"
-            textClassName="white-text"
-            title="Done"
-          >
-            I am a very simple card.
-          </Card>
+          <Render source="done" />
         </Col>
       </Row>
     </Container>

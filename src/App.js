@@ -1,25 +1,31 @@
 import React from 'react';
-import 'materialize-css';
 import { Container, Col, Row } from 'react-materialize';
 
 import Render from './components/render';
+import store from './store';
+import ls from './utils/localStorage';
 
 import './App.scss';
 
 function App() {
+  const handleStoreSubscribe = () => {
+    const { todo, inprogress, done } = store.getState();
+    ls.setTodo(todo);
+    ls.setInProgress(inprogress);
+    ls.setDone(done);
+  }
+
+  store.subscribe(handleStoreSubscribe);
   return (
     <Container className="main">
-      <Row>
+      <Row className="cards-row">
         <Col>
-          <h3>To Do</h3>
           <Render source="todo" />
         </Col>
         <Col>
-          <h3>In Progress</h3>
           <Render source="inprogress" />
         </Col>
         <Col>
-          <h3>Done</h3>
           <Render source="done" />
         </Col>
       </Row>

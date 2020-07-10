@@ -1,12 +1,15 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Button, Icon } from 'react-materialize';
 
+import Modal from '../modal';
 import Card from '../card';
 import RenderActions from '../../store/components/render/actions';
 
+import './render.scss';
+
 export const Render = ({ source, todo, inprogress, done, deleteCard }) => {
     let cards = [];
+    let head = "To Do";
     switch(source) {
         case 'todo':
             todo.map((card, index) => {
@@ -18,7 +21,7 @@ export const Render = ({ source, todo, inprogress, done, deleteCard }) => {
                     delete={() => deleteCard(source, index)} />
 
                 cards.push(c);
-            })
+            });
 
             break;
         case 'inprogress':
@@ -31,7 +34,9 @@ export const Render = ({ source, todo, inprogress, done, deleteCard }) => {
                     delete={() => deleteCard(source, index)} />
 
                 cards.push(c);
-            })
+            });
+
+            head = "In Progress";
 
             break;
         case 'done':
@@ -44,7 +49,9 @@ export const Render = ({ source, todo, inprogress, done, deleteCard }) => {
                     delete={() => deleteCard(source, index)} />
 
                 cards.push(c);
-            })
+            });
+
+            head = "Done";
 
             break;
         default:
@@ -57,19 +64,17 @@ export const Render = ({ source, todo, inprogress, done, deleteCard }) => {
                     delete={() => deleteCard(source, index)} />
 
                 cards.push(c);
-            })
+            });
+            
             break;
     }
 
     return (
         <React.Fragment>
-            <Button
-                floating
-                icon={<Icon>add</Icon>}
-                small
-                node="button"
-                waves="light"
-            />
+            <span className="cards-content">
+                <h3>{ head }</h3>
+                <Modal source={source} />
+            </span>
             { cards }
         </React.Fragment>
     );

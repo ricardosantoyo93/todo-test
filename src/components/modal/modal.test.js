@@ -1,22 +1,22 @@
 import React from 'react';
-import Enzyme, { shallow } from 'enzyme';
+import Enzyme, { shallow, mount } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import ShallowRenderer from 'react-test-renderer/shallow';
 
-import { App } from './App';
+import { Modal } from './index';
 
 Enzyme.configure({ adapter: new Adapter() });
 
-describe('App', () => {
+describe('Modal', () => {
   let wrapper = null;
 
   beforeEach(() => {
-      wrapper = shallow(<App />);
+    wrapper = shallow(<Modal />);
   });
   
   it('matches snapshot', () => {
     const renderer = new ShallowRenderer();
-    const tree = renderer.render(<App />);
+    const tree = renderer.render(<Modal />);
     expect(tree).toMatchSnapshot();
   });
 

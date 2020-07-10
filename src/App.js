@@ -7,7 +7,7 @@ import ls from './utils/localStorage';
 
 import './App.scss';
 
-function App() {
+export function App() {
   const handleStoreSubscribe = () => {
     const { todo, inprogress, done } = store.getState();
     ls.setTodo(todo);
@@ -16,6 +16,7 @@ function App() {
   }
 
   store.subscribe(handleStoreSubscribe);
+  
   return (
     <Container className="main">
       <Row className="cards-row">

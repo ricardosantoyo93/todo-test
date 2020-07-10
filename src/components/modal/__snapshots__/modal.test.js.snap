@@ -1,0 +1,74 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Modal matches snapshot 1`] = `
+<Modal
+  actions={
+    Array [
+      <Button
+        flat={true}
+        modal="close"
+        node="button"
+        waves="green"
+      >
+        Close
+      </Button>,
+    ]
+  }
+  bottomSheet={false}
+  fixedFooter={false}
+  header="Add new card"
+  id="modal-card-undefined"
+  open={false}
+  options={
+    Object {
+      "dismissible": true,
+      "endingTop": "10%",
+      "inDuration": 250,
+      "onCloseEnd": null,
+      "onCloseStart": null,
+      "onOpenEnd": null,
+      "onOpenStart": null,
+      "opacity": 0.5,
+      "outDuration": 250,
+      "preventScrolling": true,
+      "startingTop": "4%",
+    }
+  }
+  root={<body />}
+  trigger={
+    <Button
+      floating={true}
+      icon={
+        <Icon>
+          add
+        </Icon>
+      }
+      id="modal-open-undefined"
+      node="button"
+      small={true}
+      waves="light"
+    />
+  }
+>
+  <div>
+    <ForwardRef
+      id="modal-title-undefined"
+      label="Title"
+      onChange={[Function]}
+    />
+    <Textarea
+      id="modal-textarea-undefined"
+      label="Description"
+      onChange={[Function]}
+    />
+    <Button
+      id="modal-submit"
+      node="button"
+      onClick={[Function]}
+      type="button"
+    >
+      Submit
+    </Button>
+  </div>
+</Modal>
+`;

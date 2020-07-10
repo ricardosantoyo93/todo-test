@@ -57,6 +57,7 @@ export const Modal = ({ source, addCard }) => {
             open={false}
             trigger={<Button
                 floating
+                id={`modal-open-${source}`}
                 icon={<Icon>add</Icon>}
                 small
                 node="button"
@@ -66,7 +67,7 @@ export const Modal = ({ source, addCard }) => {
             <div>
                 <TextInput id={"modal-title-" + source} onChange={e => setTitle(e.target.value)} label="Title" />
                 <Textarea id={"modal-textarea-" + source} onChange={e => setDesc(e.target.value)} label="Description" />
-                <Button type="button" onClick={handleSubmit}>Submit</Button>
+                <Button id="modal-submit" type="button" onClick={handleSubmit}>Submit</Button>
             </div>
         </MModal>
     );

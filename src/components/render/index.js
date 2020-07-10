@@ -55,17 +55,6 @@ export const Render = ({ source, todo, inprogress, done, deleteCard }) => {
 
             break;
         default:
-            todo.map((card, index) => {
-                const c = <Card 
-                    key={index} 
-                    index={index} 
-                    card={card} 
-                    source={source} 
-                    delete={() => deleteCard(source, index)} />
-
-                cards.push(c);
-            });
-            
             break;
     }
 

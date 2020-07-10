@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Card matches snapshot 1`] = `
+<Card
+  actions={
+    Array [
+      undefined,
+      undefined,
+      <Button
+        className="delBtn"
+        floating={true}
+        icon={
+          <Icon>
+            close
+          </Icon>
+        }
+        node="button"
+        small={true}
+        tooltip="Delete Card"
+        waves="light"
+      />,
+    ]
+  }
+  className="blue-grey darken-1"
+  closeIcon={
+    <Icon>
+      close
+    </Icon>
+  }
+  revealIcon={
+    <Icon>
+      more_vert
+    </Icon>
+  }
+  textClassName="white-text"
+  title=""
+>
+  <span
+    className="date"
+  >
+    
+  </span>
+   
+  
+</Card>
+`;

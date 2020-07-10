@@ -14,15 +14,15 @@ class LocalStorage {
     }
 
     saveCardsFromSource = (source, cards) => {
-        this.setItem('_' + source, JSON.stringify(cards));
+        this.setItem(`_${source}`, JSON.stringify(cards));
     }
 
     deleteCardsFromSource = (source) => {
-        this.removeItem('_' + source);
+        this.removeItem(`_${source}`);
     }
 
     getCardsFromSource = (source) => {
-        const cards = this.getItem('_' + source);
+        const cards = this.getItem(`_${source}`);
 
         return cards;
     }
